@@ -3,7 +3,8 @@
 using std::cout;
 using std::cin;
 
-
+// Time: literally unkwown (collatz conjecture)
+// Space: O(1)
 int main() {
     long long n;
     cin >> n;
