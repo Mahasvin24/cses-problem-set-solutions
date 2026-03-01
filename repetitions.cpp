@@ -1,24 +1,28 @@
 #include <string>
 #include <iostream>
 
-using namespace std;
+using std::string, std::cin, std::cout;
 
 int main() {
     std::string s;
     cin >> s;
-    cout << s << endl;
 
-    int maxx = 0;
-    int curr = 1;
-    for (size_t i = 1; i < s.length(); i++) {
-        if (s[i] == s[i-1]) {
-            curr++;
-        } else {
-            curr = 1;
-            maxx = max(maxx, curr);
+    int max = 1;
+    size_t i = 1;
+    while (i < s.length()) {
+        int count = 1;
+        while (s[i] == s[i - 1]) {
+            count++;
+            i++;
         }
+
+        if (count > max)
+            max = count;
+
+        i++;
     }
 
-    cout << maxx << "\n";
+    cout << max << "\n";
+
     return 0;
 }
