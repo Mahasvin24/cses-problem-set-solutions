@@ -4,6 +4,8 @@
 
 using namespace std;
 
+// Time complexity: O(n)
+// Space complexity: O(n)
 int main() {
     int x;
     cin >> x;

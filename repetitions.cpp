@@ -3,6 +3,8 @@
 
 using std::string, std::cin, std::cout;
 
+// Time complexity: O(n)
+// Space complexity: O(1)
 int main() {
     std::string s;
     cin >> s;
