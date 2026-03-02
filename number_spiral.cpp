@@ -1,33 +1,35 @@
 #include <iostream>
+#include <cmath>
 
 using namespace std;
+typedef long long ll;
 
 int main() {
     int tests;
     cin >> tests;
 
     for (int i = 0; i < tests; i++) {
-        int r, c;
-        cin >> r;
-        cin >> c;
+        ll r, c;
+        cin >> r; // 2
+        cin >> c; // 3
 
-        int total = 0;
+        ll total = 0;
         if (c > r) {
-            int inner = pow(c - 1, 2);
-            int outer = pow(c, 2) - inner;
+            ll inner = (c - 1) * (c - 1);
+            ll outer = c * c - inner;
             if (c % 2 == 0) {
                 total += r;
             } else {
-                total += outer - r;
+                total += outer - r + 1;
             }
             total += inner;
         } else {
-            int inner = pow(r - 1, 2);
-            int outer = pow(r, 2) - inner;
-            if (r % 2 == 0) {
+            ll inner = (r - 1) * (r - 1);
+            ll outer = r * r - inner;
+            if (r % 2 == 1) {
                 total += c;
             } else {
-                total += outer - c;
+                total += outer - c + 1;
             }
             total += inner;
         }
